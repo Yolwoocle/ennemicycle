@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://tuvp10ntkgio"]
+
+[ext_resource type="Texture2D" uid="uid://v4ndddnvsgxb" path="res://assets/images/cursor/token.png" id="1_rywel"]
+[ext_resource type="Theme" uid="uid://dkhurhcophc2q" path="res://resources/themes/main_theme.tres" id="2_qpset"]
+[ext_resource type="FontFile" uid="uid://kasuqta1fav8" path="res://assets/fonts/marianne_extra_bold.otf" id="3_8umr6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2inn2"]
+resource_local_to_scene = true
+font_size = 41
+shadow_size = 17
+shadow_color = Color(0, 0, 0, 0.568627)
+shadow_offset = Vector2(0, 0)
+
+[node name="Token" type="Sprite2D"]
+self_modulate = Color(1, 0.2, 0.2, 1)
+z_index = -1
+position = Vector2(-50.6667, -64)
+texture = ExtResource("1_rywel")
+
+[node name="TokenLabel" type="Label" parent="."]
+offset_left = -45.0
+offset_top = -44.0
+offset_right = 44.0
+offset_bottom = 44.0
+theme = ExtResource("2_qpset")
+theme_override_fonts/font = ExtResource("3_8umr6")
+text = "J1"
+label_settings = SubResource("LabelSettings_2inn2")
+horizontal_alignment = 1
+vertical_alignment = 1

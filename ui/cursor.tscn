@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://duespy17xr7p7"]
+
+[ext_resource type="Texture2D" uid="uid://daw605tfcl878" path="res://assets/images/cursor/cursor_token.png" id="1_06i3y"]
+[ext_resource type="Script" path="res://ui/cursor.gd" id="1_550j6"]
+[ext_resource type="Texture2D" uid="uid://v4ndddnvsgxb" path="res://assets/images/cursor/token.png" id="3_mf5qx"]
+[ext_resource type="Theme" uid="uid://dkhurhcophc2q" path="res://resources/themes/main_theme.tres" id="4_he3sl"]
+[ext_resource type="FontFile" uid="uid://kasuqta1fav8" path="res://assets/fonts/marianne_extra_bold.otf" id="5_v7hl2"]
+[ext_resource type="Texture2D" uid="uid://bbxoi0uq8g8f" path="res://assets/images/cursor/cursor_token_shadow.png" id="6_py78n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2inn2"]
+resource_local_to_scene = true
+font_size = 41
+shadow_size = 17
+shadow_color = Color(0, 0, 0, 0.568627)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aphc0"]
+resource_local_to_scene = true
+font_size = 41
+font_color = Color(1, 0.24, 0.24, 1)
+outline_size = 20
+shadow_size = 42
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="Cursor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_550j6")
+player_index = null
+
+[node name="Hand" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Token" type="Sprite2D" parent="Hand"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.2, 0.2, 1)
+z_index = -1
+position = Vector2(-2.28882e-05, 0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_mf5qx")
+
+[node name="TokenLabel" type="Label" parent="Hand/Token"]
+offset_left = -45.0
+offset_top = -44.0
+offset_right = 44.0
+offset_bottom = 44.0
+theme = ExtResource("4_he3sl")
+theme_override_fonts/font = ExtResource("5_v7hl2")
+text = "J1"
+label_settings = SubResource("LabelSettings_2inn2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HandSprite" type="Sprite2D" parent="Hand"]
+self_modulate = Color(1, 0.79, 0.79, 1)
+position = Vector2(38, 48)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_06i3y")
+
+[node name="Shadow" type="Sprite2D" parent="Hand/HandSprite"]
+visible = false
+modulate = Color(0.93, 0.32922, 0.2232, 1)
+z_index = -2
+position = Vector2(3.8147e-06, 0)
+texture = ExtResource("6_py78n")
+
+[node name="HandLabel" type="Label" parent="Hand/HandSprite"]
+offset_left = -2.66667
+offset_top = -40.0
+offset_right = 32.3333
+offset_bottom = 18.0
+theme = ExtResource("4_he3sl")
+theme_override_fonts/font = ExtResource("5_v7hl2")
+text = "J1"
+label_settings = SubResource("LabelSettings_aphc0")

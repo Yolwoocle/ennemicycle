@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dkhurhcophc2q"]
+
+[ext_resource type="FontFile" uid="uid://b6ylfgl2jshnv" path="res://assets/fonts/marianne_bold.otf" id="1_1w1jr"]
+
+[resource]
+Label/fonts/font = ExtResource("1_1w1jr")

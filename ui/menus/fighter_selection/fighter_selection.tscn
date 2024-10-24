@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbjvrkrwl4eyv"]
+
+[ext_resource type="PackedScene" uid="uid://ivlkxor50yan" path="res://ui/menus/fighter_selection/roster_selection.tscn" id="1_bbb8q"]
+[ext_resource type="Script" path="res://ui/menus/fighter_selection/fighter_selection.gd" id="1_ev2sl"]
+[ext_resource type="PackedScene" uid="uid://duespy17xr7p7" path="res://ui/cursor.tscn" id="2_agst3"]
+[ext_resource type="PackedScene" uid="uid://bcfeoif0feglx" path="res://ui/figher_preview.tscn" id="2_w77mw"]
+
+[node name="FighterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ev2sl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RosterSelection" parent="MarginContainer" instance=ExtResource("1_bbb8q")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="FighterPreviews" type="Control" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="FighterPreviewList" type="HBoxContainer" parent="MarginContainer/FighterPreviews"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="FighterPreview1" parent="MarginContainer/FighterPreviews/FighterPreviewList" instance=ExtResource("2_w77mw")]
+layout_mode = 2
+
+[node name="FighterPreview2" parent="MarginContainer/FighterPreviews/FighterPreviewList" instance=ExtResource("2_w77mw")]
+layout_mode = 2
+player_index = 2
+
+[node name="FighterPreview3" parent="MarginContainer/FighterPreviews/FighterPreviewList" instance=ExtResource("2_w77mw")]
+layout_mode = 2
+
+[node name="FighterPreview4" parent="MarginContainer/FighterPreviews/FighterPreviewList" instance=ExtResource("2_w77mw")]
+layout_mode = 2
+
+[node name="Cursors" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 200
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CursorP1" parent="Cursors" instance=ExtResource("2_agst3")]
+offset_left = 171.0
+offset_top = 147.0
+offset_right = 171.0
+offset_bottom = 147.0
+player_index = null
+
+[node name="CursorP2" parent="Cursors" instance=ExtResource("2_agst3")]
+offset_left = 328.0
+offset_top = 135.0
+offset_right = 328.0
+offset_bottom = 135.0
+player_index = 1

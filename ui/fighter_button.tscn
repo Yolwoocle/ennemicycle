@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://drcg4bbxdc1ta"]
+
+[ext_resource type="Texture2D" uid="uid://di0tlqfrsg7fi" path="res://normal.png" id="1_csqr6"]
+[ext_resource type="Texture2D" uid="uid://djx4wfqigb2cn" path="res://clicked.png" id="2_rfpqm"]
+[ext_resource type="Texture2D" uid="uid://bgcixgnlucmw4" path="res://hver.png" id="3_r1xcw"]
+[ext_resource type="Texture2D" uid="uid://b2y5a2eu84nbp" path="res://icon.svg" id="4_dl2b5"]
+[ext_resource type="BitMap" uid="uid://c5sca2qrshyp8" path="res://mask.png" id="5_yjvs3"]
+[ext_resource type="Script" path="res://ui/fighter_button.gd" id="6_svdaf"]
+
+[node name="FighterButton" type="TextureButton" groups=["cursor_button"]]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_csqr6")
+texture_pressed = ExtResource("2_rfpqm")
+texture_hover = ExtResource("3_r1xcw")
+texture_disabled = ExtResource("4_dl2b5")
+texture_click_mask = ExtResource("5_yjvs3")
+script = ExtResource("6_svdaf")
+
+[node name="Label" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 81.0
+offset_top = 83.0
+offset_right = 121.0
+offset_bottom = 106.0
+bbcode_enabled = true
+text = "..."
+scroll_active = false
+
+[node name="HoverOverlay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
